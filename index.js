@@ -15,7 +15,7 @@ const generate7BoomAfterDelayAsync = (min, max) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             let randomNumber = Math.floor(Math.random() * (max - min)) + min;
-            if (randomNumber % 7 === 0) {
+            if (randomNumber % randomNumber === 0) {
                 resolve(randomNumber)
             } else {
                 reject(randomNumber)
