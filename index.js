@@ -13,11 +13,13 @@ const runCode = () => {
 
 const generate7BoomAfterDelayAsync = (min, max) => {
     return new Promise((resolve, reject) => {
-        let randomNumber = Math.floor(Math.random() * (max - min)) + min;
-        if (randomNumber % 7 === 0) {
-            resolve(randomNumber)
-        } else {
-            reject(randomNumber)
-        }
+        setTimeout(() => {
+            let randomNumber = Math.floor(Math.random() * (max - min)) + min;
+            if (randomNumber % 7 === 0) {
+                resolve(randomNumber)
+            } else {
+                reject(randomNumber)
+            }
+        }, 1000);
     })
 }
