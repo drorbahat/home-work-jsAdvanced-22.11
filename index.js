@@ -6,9 +6,9 @@ const runCode = () => {
 }
 
 const currentTime = () => {
-    let now = new Date()
-    let currentTimeString = now.toLocaleTimeString()
     setTimeout(() => {
+        let now = new Date()
+        let currentTimeString = now.toLocaleTimeString()
         console.log(currentTimeString)
         
     }, 3000);
