@@ -8,7 +8,10 @@ const runCode = () => {
 const currentTime = () => {
     let now = new Date()
     let currentTimeString = now.toLocaleTimeString()
-    console.log(currentTimeString)
+    setTimeout(() => {
+        console.log(currentTimeString)
+        
+    }, 3000);
 }
 
 const doWork = (callback) => {
