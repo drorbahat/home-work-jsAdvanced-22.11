@@ -2,20 +2,24 @@ let outputElement = document.getElementById("output")
 let button = document.getElementById("runCodeButton")
 
 const runCode = () => {
-    doWork(currentTime)
+    generate7BoomAfterDelayAsync(44, 900)
+        .then((num) => {
+            console.log(num + " success")
+        })
+        .catch((num) => {
+            console.log(num + "error")
+        })
 }
 
-const currentTime = () => {
-    setTimeout(() => {
-        let now = new Date()
-        let currentTimeString = now.toLocaleTimeString()
-        console.log(currentTimeString)
-        
-    }, 3000);
-}
 
-const doWork = (callback) => {
-    console.log("start")
-    callback()
-    console.log("end")
+
+const generate7BoomAfterDelayAsync = (min, max) => {
+    return new Promise(() => {
+        let randomNumber = Math.floor(Math.random() * (max - min)) + min;
+        if (randomNumber % 7 === 0) {
+            resolve(randomNumber)
+        } else {
+            reject()
+        }
+    })
 }
