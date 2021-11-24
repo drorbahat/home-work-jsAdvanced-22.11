@@ -2,23 +2,24 @@ let outputElement = document.getElementById("output")
 let button = document.getElementById("runCodeButton")
 
 const runCode = () => {
-    generate7BoomAfterDelayAsync(77, 900)
-        .then((num) => {
-            console.log(num + " success")
+    generateCuteAnimalAfterDelayAsync()
+        .then((chosenOne) => {
+            console.log(chosenOne + "  is cute")
         })
-        .catch((num) => {
-            console.log(num + "error")
+        .catch((chosenOne) => {
+            console.log(chosenOne + " is'nt cute")
         })
 }
 
-const generate7BoomAfterDelayAsync = (min, max) => {
+const generateCuteAnimalAfterDelayAsync = (min, max) => {
     return new Promise((resolve, reject) => {
+        let animalList = ["🐈", "🐕", "🐇", "🦜", "🦂", "🕷️", "🪳"]
+        let chosenOne = animalList[Math.floor(Math.random() * animalList.length)];
         setTimeout(() => {
-            let randomNumber = Math.floor(Math.random() * (max - min)) + min;
-            if (randomNumber % 7 === 0) {
-                resolve(randomNumber)
+            if (chosenOne === "🐈" || chosenOne === "🐕" || chosenOne === "🐇" || chosenOne === "🦜") {
+                resolve(chosenOne)
             } else {
-                reject(randomNumber)
+                reject(chosenOne)
             }
         }, 1000);
     })
