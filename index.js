@@ -2,7 +2,7 @@ let outputElement = document.getElementById("output")
 let button = document.getElementById("runCodeButton")
 
 const runCode = () => {
-    generate7BoomAfterDelayAsync(0, 100)
+    generate7BoomAfterDelayAsync(77, 900)
         .then((num) => {
             console.log(num + " success")
         })
